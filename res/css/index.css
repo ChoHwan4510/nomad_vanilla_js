@@ -5,3 +5,11 @@
 .clicked{
     color: #d35400;
 }
+.form,
+.greeting
+{
+    display: none;
+}
+.showing{
+    display: block;
+}
