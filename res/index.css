@@ -1,0 +1,7 @@
+.btn{
+    cursor: pointer;
+    transition: color .5 ease-in-out;
+}
+.clicked{
+    color: #d35400;
+}
