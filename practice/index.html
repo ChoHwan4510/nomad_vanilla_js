@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="res/css/index.css" rel="styleSheet">
+        <title>nomad_js_study</title>
+        <!--script src="res/js/index.js" async></script-->
+        <script src="res/js/clock.js" async></script>
+        <script src="res/js/nameSave.js" async></script>
+        <script src="res/js/todo.js" async></script>
+        <script src="res/js/bg.js" async></script>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded",function(){
+                const openModal = document.getElementById("openModal");
+                const modalBack = document.querySelector(".modal-back");
+                const modal = document.querySelector(".modal");
+                const closeModal = modal.querySelector("button");
+
+                const open = ()=>{
+                    modal.classList.remove("modal-hide");
+                    modalBack.classList.remove("modal-hide");
+                }
+                const close = ()=>{
+                    modal.classList.add("modal-hide");
+                    modalBack.classList.add("modal-hide");
+                }
+
+                openModal.addEventListener("click",open);
+                closeModal.addEventListener("click",close);
+            })
+        </script>
+    </head>
+    <body>
+        <h1 id="title" class="btn">This Works!</h1>
+        <div class="clock">
+            <h1></h1>
+        </div>
+        <form class="js-form form">
+            <input type="text" placeholder="너의 이름은"/>
+        </form>
+        <h4 class="js-greeting greeing"></h4>
+        <form class="js-toDoForm">
+            <input type="text" placeholder="할일 목록을 적어보세요!"/>
+        </form>
+        <ul class="js-todoList">
+        </ul>
+
+        <button type="button"id="openModal">modal open</button>
+
+        <div class="modal-back modal-hide"></div>
+        <div class="modal modal-hide">
+            <div>index</div>
+            <button type="button" class="close-modal">close</button>
+        </div>
+    </body>    
+</html>

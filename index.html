@@ -1,56 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link href="res/css/index.css" rel="styleSheet">
-        <title>nomad_js_study</title>
-        <!--script src="res/js/index.js" async></script-->
-        <script src="res/js/clock.js" async></script>
-        <script src="res/js/nameSave.js" async></script>
-        <script src="res/js/todo.js" async></script>
-        <script src="res/js/bg.js" async></script>
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded",function(){
-                const openModal = document.getElementById("openModal");
-                const modalBack = document.querySelector(".modal-back");
-                const modal = document.querySelector(".modal");
-                const closeModal = modal.querySelector("button");
-
-                const open = ()=>{
-                    modal.classList.remove("modal-hide");
-                    modalBack.classList.remove("modal-hide");
-                }
-                const close = ()=>{
-                    modal.classList.add("modal-hide");
-                    modalBack.classList.add("modal-hide");
-                }
-
-                openModal.addEventListener("click",open);
-                closeModal.addEventListener("click",close);
-            })
-        </script>
-    </head>
-    <body>
-        <h1 id="title" class="btn">This Works!</h1>
-        <div class="clock">
-            <h1></h1>
-        </div>
-        <form class="js-form form">
-            <input type="text" placeholder="너의 이름은"/>
+<head>
+   <meta charset="UTF-8" >
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>할일목록</title>
+   <script src="res/js/name_save.js" async></script>
+   <script src="res/js/clock.js" async></script>
+   <script src="res/js/doList.js" async></script>
+</head>
+<link rel="styleSheet" href="res/css/index.css" />
+<link rel="styleSheet" href="res/css/base.css" />
+<body>
+    <!--img src="res/img/1.jpg" class="bg-img"/-->
+    <div class="container">
+        <div class="clock"></div>
+        <h1 class="main-title showing">Hello Welcome My Vanilla_js World</h1>
+        <form class="form-control showing">
+            <input type="text" id="inputName" class="input-name" value="" />
         </form>
-        <h4 class="js-greeting greeing"></h4>
-        <form class="js-toDoForm">
-            <input type="text" placeholder="할일 목록을 적어보세요!"/>
+        <!-- localStorage에 값이 있으면 show-->      
+        <div class="user_name_text"></div>
+
+        <div class="todo-list-text">오늘 할일 목록을 입력해주세요</div>
+        <form class="form-control-todo">
+            <input type="text" id="inputDoto" class="input-todo" value="" />
         </form>
-        <ul class="js-todoList">
-        </ul>
-
-        <button type="button"id="openModal">modal open</button>
-
-        <div class="modal-back modal-hide"></div>
-        <div class="modal modal-hide">
-            <div>index</div>
-            <button type="button" class="close-modal">close</button>
-        </div>
-    </body>    
-</html>
+        <ul class="todo-list"></ul>
+    </div>
+</body>
