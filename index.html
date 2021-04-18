@@ -6,11 +6,38 @@
    <script src="res/js/name_save.js" async></script>
    <script src="res/js/clock.js" async></script>
    <script src="res/js/doList.js" async></script>
+   <script>
+       function open_modal(){
+            var modalBack = document.querySelector(".modal-back");
+            var modalWrap = document.querySelector(".modal-wrap");
+
+            modalBack.classList.add("showing");
+            modalWrap.classList.add("showing");
+       }
+       function link_start(){
+           localStorage.setItem("animation","on");
+
+           var count_down = 5;
+           setInterval(() => {
+               console.log(count_down);
+               count_down = count_down-1;
+           }, 1000);
+           setTimeout(() => {
+                location.reload();
+           }, 5000);
+           return "접속완료 5초후에 접속합니다";
+       }
+       document.addEventListener("DOMContentLoaded",function(){
+           var chnage_chk = localStorage.getItem("animation");
+            open_modal;
+       });
+   </script>
 </head>
 <link rel="styleSheet" href="res/css/index.css" />
 <link rel="styleSheet" href="res/css/base.css" />
 <body>
-    <!--img src="res/img/1.jpg" class="bg-img"/-->
+    <img src="res/img/1.jpg" class="bg-img"/>
+    <div class="change-background-btn" onclick="open_modal(event)">modalBtn</div>
     <div class="container">
         <div class="clock"></div>
         <h1 class="main-title showing">Hello Welcome My Vanilla_js World</h1>
@@ -25,5 +52,10 @@
             <input type="text" id="inputDoto" class="input-todo" value="" />
         </form>
         <ul class="todo-list"></ul>
+    </div>
+    <!-- modal-->
+    <div class="modal-back"></div>
+    <div class="modal-wrap">
+        퀴즈 정답은 콘솔창을 열어서 link_start 함수를 실행해서켜주세요
     </div>
 </body>

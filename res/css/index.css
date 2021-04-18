@@ -7,8 +7,26 @@
 .user_name_text{
     display:none;
 }
+/*animation*/
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fadeIn2{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.7;
+    }
+}
+
 .showing{
-    display: block;
+    display: block !important;
 }
 .bg-img{
     opacity: 0.7;
@@ -26,6 +44,17 @@
 .main-title{
     font-size: 3rem;
     margin-bottom: 20px;
+}
+.change-background-btn{
+    position: absolute;
+    top:3%;
+    left: 3%;
+    padding:10px;
+    font-size: 15px;
+    font-weight:bold;
+    background-color: #DFD0E0;
+    border-radius: 30px;
+    cursor: pointer;
 }
 .container{        
     height: 100vh;
@@ -65,4 +94,27 @@
     color: red;
     font-weight: bold;
     cursor:pointer;
+}
+.modal-back{
+    background-color: #000;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;    
+    opacity: 0.7;
+    z-index: 888;
+    display: none;
+    animation: fadeIn2 .5s linear;
+}
+.modal-wrap{
+    background-color: #fff;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display:none;
+    animation: fadeIn .5s linear;
 }
